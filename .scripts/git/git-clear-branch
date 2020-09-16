@@ -1,0 +1,6 @@
+#!/bin/bash
+# Remove merged branches
+# Usage:
+# $ git clear-branch
+
+git branch --merged | egrep -v "(^\*|master|develop|release)" | xargs git branch -d

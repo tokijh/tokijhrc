@@ -1,0 +1,34 @@
+#!/bin/bash
+# Make new branch and checkout it
+#
+# This is shortcut of `git checkout -b ...`
+#
+# 1. `git cob BASE_BRANCH TARGET_BRANCH`
+#
+# This command is shortcut following command
+# git checkout -b TARGET_BRANCH --track BASE_BRANCH
+# 
+# 2. `git cob TARGET_BRANCH`
+# 
+#
+
+# See https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt-emgitcheckoutem-b-Bltnewbranchgtltstartpointgt
+
+FIRST_PARAM=$1
+SECOND_PARAM=$2
+
+if [ $FIRST_PARAM -a $SECOND_PARAM ];
+then
+    BASE_BRANCH=$FIRST_PARAM
+    TARGET_BRANCH=$SECOND_PARAM
+
+    git checkout -b $TARGET_BRANCH --track $BASE_BRANCH
+elif [ $FIRST_PARAM ];
+then
+    TARGET_BRANCH=$FIRST_PARAM
+
+    git checkout -b $TARGET_BRANCH
+else
+    echo "There is no TARGET_BRANCH"
+fi
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+# Fixup uncommited changes into target commit
+#
+# `git cof` is a abbreviation of `git COmmit & Fixup rebase` :-)
+#
+# This will...
+# 1. Commit uncommited changes with message "fixup! TARGET_COMMIT_HASH"
+# 2. Fixup the commit meld into target commit with no interaction (non-interactive interactive rebase)
+#
+# Instruction
+# 1. Move this file to ~/.gitsh/
+# 2. Add directory path($YOUR_HOME_PATH/.gitsh) to environment variable file
+#    (like ~/.bash_profile or ~/.zshrc)
+#    (This would be like 'export PATH=${PATH}:/Users/YOUR_HOME_PATH/.gitsh')
+# 3. chmod 0755 git-cof
+# 4. Use the command 'git cof TARGET_COMMIT_HASH'
+
+TARGET_COMMIT_HASH=$1
+
+git commit -am "fixup! $TARGET_COMMIT_HASH"
+GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash $TARGET_COMMIT_HASH~1 || git reset HEAD~1
+
