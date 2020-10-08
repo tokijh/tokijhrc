@@ -17,5 +17,5 @@
 
 TARGET_COMMIT_HASH=$1
 
-git commit -am "fixup! $TARGET_COMMIT_HASH" && GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash $TARGET_COMMIT_HASH~1 || git reset HEAD~1
+git commit -anm "fixup! $TARGET_COMMIT_HASH" && GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash $TARGET_COMMIT_HASH~1 || git reset HEAD~1
 
