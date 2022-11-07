@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Merge without interaction
+#
+# This is shortcut of `git merge`
+# `git merge-s origin/develop` will be `git merge origin/develop -nm "Merge origin/develop"`
+#
+# 1. `git merge-s "{TARGET_COMMIT_HASH}"
+
+TARGET_COMMIT_HASH=$1
+git merge $TARGET_COMMIT_HASH -nm "Merge $TARGET_COMMIT_HASH"

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Rename commit message
+#
+# This is shortcut of `git commit --amend -nm "{MESSAGE}"`
+#
+# 1. `git rename "{MESSAGE}"
+
+MESSAGE=$1
+git commit --amend -nm "$MESSAGE"

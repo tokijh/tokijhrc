@@ -1,7 +1,7 @@
 #!/bin/bash
 # Fixup uncommited changes into target commit
 #
-# `git cof` is a abbreviation of `git COmmit & Fixup rebase` :-)
+# `git cof` is a abbreviation of `git Commit & Fixup rebase` :-)
 #
 # This will...
 # 1. Commit uncommited changes with message "fixup! TARGET_COMMIT_HASH"

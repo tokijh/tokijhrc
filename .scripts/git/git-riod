@@ -1,0 +1,5 @@
+#!/bin/bash
+# riod (git rebase -i origin/develop)
+# Rebase to origin/develop with interaction
+
+git rebase -i origin/develop

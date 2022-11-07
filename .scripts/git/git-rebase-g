@@ -1,6 +1,0 @@
-#!/bin/bash
-# rebase and verify gpg
-# Usage:
-# $ git rebase-g
-
-git rebase --exec 'git commit --amend --no-edit -n -S' -i $1
